@@ -8,6 +8,7 @@
 #include <QList>
 #include <QMouseEvent>
 #include <QDebug>
+#include <QWidget>
 
 #include "windowWidgets.h"
 
@@ -17,7 +18,7 @@ class PortComboBox : public QComboBox
 
 public:
   PortComboBox();
-  void connectionButtonClicked();
+  void connect();
 
 private:
   void scan();

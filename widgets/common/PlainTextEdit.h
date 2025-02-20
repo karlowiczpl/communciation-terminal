@@ -6,7 +6,10 @@
 
 class PlainTextEdit : public QPlainTextEdit
 {
+  Q_OBJECT
 
+public:
+  PlainTextEdit();
 };
 
 #endif // PLAIN_TEXT_EDIT_H

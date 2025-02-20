@@ -5,6 +5,8 @@
 #include <QPushButton>
 #include <QMouseEvent>
 #include <QDebug>
+#include <QPainter>
+#include <QWidget>
 
 class PushButton : public QPushButton
 {
@@ -13,11 +15,12 @@ public:
   PushButton(int type);
 
 protected:
-  virtual void keyPressEvent(QKeyEvent* e) override;
+  virtual void paintEvent(QPaintEvent* e) override;
+  virtual void mousePressEvent(QMouseEvent* e) override;
 
 private:
   int type;
-
+  bool connected;
 };
 
 #endif // PUSH_BUTTON_H

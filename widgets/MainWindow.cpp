@@ -3,8 +3,16 @@
 MainWindow::MainWindow()
 {
   QVBoxLayout* main_layout = createWindow();
+  auto* input_layout = new QHBoxLayout;
+  
   createWidgets();
+
   addItemsToMainLayout(main_layout);
+  main_layout->addWidget(window_widgets.output_box);
+
+  main_layout->addLayout(input_layout);
+  input_layout->addWidget(window_widgets.input_line);
+  input_layout->addWidget(window_widgets.send_button);
 }
 void MainWindow::addItemsToMainLayout(QVBoxLayout* main_layout)
 {
@@ -29,12 +37,12 @@ void MainWindow::createWidgets()
   window_widgets.send_button = new PushButton(1);
   window_widgets.input_line = new LineEdit;
   window_widgets.output_box = new PlainTextEdit;
-  port_box = new PortComboBox();
   window_widgets.baud_rate_box = new ComboBox(1);
   window_widgets.data_bits_box = new ComboBox(2);
   window_widgets.stop_bits_box = new ComboBox(3);
   window_widgets.parity_box = new ComboBox(4);
   window_widgets.flow_control_box = new ComboBox(5);
+  port_box = new PortComboBox();
 }
 QVBoxLayout* MainWindow::createWindow()
 {
@@ -43,6 +51,7 @@ QVBoxLayout* MainWindow::createWindow()
 
   auto* central_widget = new QWidget;
   auto* main_layout = new QVBoxLayout;
+
 
   setCentralWidget(central_widget);
   central_widget->setLayout(main_layout);
