@@ -9,19 +9,26 @@
 #include <QMouseEvent>
 #include <QDebug>
 #include <QWidget>
+#include <QThread>
 
 #include "windowWidgets.h"
+#include "common/PushButton.h"
+#include "../source/Configuration.h"
 
 class PortComboBox : public QComboBox
 {
   Q_OBJECT
 
 public:
-  PortComboBox();
+  PortComboBox(WINDOW_WIDGETS_T* window_widgets);
   void connect();
 
 private:
   void scan();
+  void setParameters();
+
+private slots:
+  void newMessage();
 
 protected:
   virtual void mousePressEvent(QMouseEvent* e) override;

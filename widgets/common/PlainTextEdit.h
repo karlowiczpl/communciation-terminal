@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QPlainTextEdit>
+#include <QTextCharFormat>
 
 class PlainTextEdit : public QPlainTextEdit
 {
@@ -10,6 +11,12 @@ class PlainTextEdit : public QPlainTextEdit
 
 public:
   PlainTextEdit();
+  void newInputMessage(const QString &message);
+  void newOutputMessage(const QString &message);
+
+private:
+  QTextCharFormat input_format;
+  QTextCharFormat output_format;
 };
 
 #endif // PLAIN_TEXT_EDIT_H

@@ -42,7 +42,7 @@ void MainWindow::createWidgets()
   window_widgets.stop_bits_box = new ComboBox(3);
   window_widgets.parity_box = new ComboBox(4);
   window_widgets.flow_control_box = new ComboBox(5);
-  port_box = new PortComboBox();
+  port_box = new PortComboBox(&window_widgets);
 }
 QVBoxLayout* MainWindow::createWindow()
 {

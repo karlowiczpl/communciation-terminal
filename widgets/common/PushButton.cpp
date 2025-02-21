@@ -1,6 +1,6 @@
 #include "PushButton.h"
 
-PushButton::PushButton(int type) : type(type) , connected(false)
+PushButton::PushButton(int type) : type(type) , isConnected(false)
 {
   setFocusPolicy(Qt::StrongFocus);
 
@@ -9,11 +9,11 @@ PushButton::PushButton(int type) : type(type) , connected(false)
     setText("Send");
   }
 }
-void PushButton::mousePressEvent(QMouseEvent* e)
+void PushButton::connected(bool con)
 {
   if(!type)
   {
-    connected = !connected;
+    isConnected = con;
     update();
   }
 }
@@ -28,7 +28,7 @@ void PushButton::paintEvent(QPaintEvent* e)
   }
   else 
   {
-    if(connected)
+    if(isConnected)
     {
       painter.setPen(Qt::red);
       painter.drawText(rect() , Qt::AlignCenter , "Disconnect");

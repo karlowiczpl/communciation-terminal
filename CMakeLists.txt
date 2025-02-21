@@ -17,6 +17,8 @@ find_package(Qt5 COMPONENTS
         REQUIRED)
 
 set(source
+  source/Configuration.cpp
+  source/Configuration.h
 )
 
 set(widgets

@@ -14,7 +14,6 @@
 #include "common/LineEdit.h"
 #include "common/PlainTextEdit.h"
 
-
 class MainWindow : public QMainWindow
 {
   Q_OBJECT

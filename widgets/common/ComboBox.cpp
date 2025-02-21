@@ -30,7 +30,7 @@ MAPPER all_data_bits[] = {
   {"5" , QSerialPort::Data5},
   {"6" , QSerialPort::Data6},
   {"7" , QSerialPort::Data7},
-  {"7" , QSerialPort::Data7},
+  {"8" , QSerialPort::Data8},
 };
 MAPPER all_flow_control[] = {
   {"No flow control" , QSerialPort::NoFlowControl},

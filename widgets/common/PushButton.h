@@ -13,14 +13,16 @@ class PushButton : public QPushButton
   Q_OBJECT
 public:
   PushButton(int type);
+  void connected(bool en);
 
 protected:
   virtual void paintEvent(QPaintEvent* e) override;
-  virtual void mousePressEvent(QMouseEvent* e) override;
 
 private:
   int type;
-  bool connected;
+  bool isConnected;
+
+  /*PortComboBox* port_box;*/
 };
 
 #endif // PUSH_BUTTON_H
